@@ -18,7 +18,9 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('index', {
+    text: process.env.API_URL.replace('#INN#', '134235345435')
+  });
 });
 
 // Обработка ошибок.
